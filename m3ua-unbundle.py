@@ -257,7 +257,7 @@ if __name__ == '__main__':
                     hours = secs / 3600
                     mins = (secs - hours * 3600) / 60
                     secs = (secs - hours * 3600 - mins * 60)
-                    current_time = "%02d:%02d:%02d.%d" % (hours, mins, secs, msecs)
+                    current_time = "%02d:%02d:%02d.%06d" % (hours, mins, secs, msecs)
                 except:
                     pass
             data_block = list()
