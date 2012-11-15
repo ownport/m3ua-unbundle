@@ -5,7 +5,7 @@
 #   tshark -x -r <source.pcap> | python m3ua-unbundle.py  | text2pcap -l141 -t "%H:%M:%S." - <restult.pcap>
 # 
 __author__ = 'Andrey Usov <https://github.com/ownport/m3ua-unbundle>'
-__version__ = '0.1'
+__version__ = '0.1.1'
 __license__ = """
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
