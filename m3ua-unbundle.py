@@ -2,7 +2,7 @@
 #
 #   M3UA unbundle
 #   
-#   tshark -x -r <source.pcap> | python m3ua-unbundle.py  | text2pcap -l141 -t "%S" - <restult.pcap>
+#   tshark -x -r <source.pcap> | python m3ua-unbundle.py  | text2pcap -l141 -t "%S." - <restult.pcap>
 # 
 __author__ = 'Andrey Usov <https://github.com/ownport/m3ua-unbundle>'
 __version__ = '0.1'
@@ -219,7 +219,7 @@ def m3ua_to_mtp3(m3ua_header):
 def print_data(current_time, data):
     ''' print data block '''
 
-    print '%f.' % current_time
+    print '%f' % current_time
     row_id = 0
     while True:
         if row_id >= len(data):
