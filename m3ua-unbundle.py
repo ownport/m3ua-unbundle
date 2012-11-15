@@ -30,6 +30,7 @@ POSSIBILITY OF SUCH DAMAGE."""
 
 
 import sys
+import math
 
 PROTOCOLS = {
     'SCTP': 132,
@@ -219,7 +220,7 @@ def m3ua_to_mtp3(m3ua_header):
 def print_data(current_time, data):
     ''' print data block '''
 
-    print '%f' % current_time
+    print '%s' % current_time
     row_id = 0
     while True:
         if row_id >= len(data):
@@ -230,7 +231,7 @@ def print_data(current_time, data):
 
 if __name__ == '__main__':
 
-    current_time = .0
+    current_time = '00:00:00.0000'
     data_block = list()
     while True:
         line = sys.stdin.readline()
@@ -249,9 +250,14 @@ if __name__ == '__main__':
                     filtered_block = filtered_block.strip()
                 handle_packet(current_time, filtered_block)
             else:
-                curr_time_str = ' '.join(data_block).strip()
                 try:
-                    current_time = float(curr_time_str.split(' ')[1])
+                    curr_time_str = ' '.join(data_block).strip()
+                    curr_time_str_split = [f for f in curr_time_str.split(' ') if f]
+                    secs, msecs = map(int, curr_time_str_split[1].split('.'))
+                    hours = secs / 3600
+                    mins = (secs - hours * 3600) / 60
+                    secs = (secs - hours * 3600 - mins * 60)
+                    current_time = "%02d:%02d:%02d.%d" % (hours, mins, secs, msecs)
                 except:
                     pass
             data_block = list()
