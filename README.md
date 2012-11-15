@@ -12,7 +12,7 @@ How to use
 ----------
 
 ```
-tshark -x -r <source.pcap> | python m3ua-unbundle.py  | text2pcap -l141 -t "%S" - <result.pcap>
+tshark -x -r <source.pcap> | python m3ua-unbundle.py  | text2pcap -l141 -t "%H:%M:%S." - <result.pcap>
 ```
 
 

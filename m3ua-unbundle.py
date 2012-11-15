@@ -2,7 +2,7 @@
 #
 #   M3UA unbundle
 #   
-#   tshark -x -r <source.pcap> | python m3ua-unbundle.py  | text2pcap -l141 -t "%H:%M:%S." - <restult.pcap>
+#   tshark -x -r <source.pcap> | python m3ua-unbundle.py  | text2pcap -l141 -t "%H:%M:%S." - <result.pcap>
 # 
 __author__ = 'Andrey Usov <https://github.com/ownport/m3ua-unbundle>'
 __version__ = '0.1.1'
