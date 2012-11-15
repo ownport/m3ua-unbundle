@@ -219,7 +219,7 @@ def m3ua_to_mtp3(m3ua_header):
 def print_data(current_time, data):
     ''' print data block '''
 
-    print '%f' % current_time
+    print '%f.' % current_time
     row_id = 0
     while True:
         if row_id >= len(data):
