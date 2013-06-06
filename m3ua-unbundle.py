@@ -116,6 +116,7 @@ def extract_sctp(current_time, data):
         if len(data) == 0:
             break
         (sctp_chunk, data) = extract_sctp_chunk(data)
+        debug_file.write("%s\n" % sctp_chunk['data'])
         if sctp_chunk['type'] == SCTP_CHUNK_TYPES['DATA']:
             # protocol payload identifier
             payload_identifier = int(''.join(sctp_chunk['data'][12:16]), 16)
@@ -261,4 +262,5 @@ if __name__ == '__main__':
                 except:
                     pass
             data_block = list()
+
 
