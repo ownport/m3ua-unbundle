@@ -1,6 +1,10 @@
 m3ua-unbundle
 =============
 
+**Warning!** [ownport/m3ua-unbundle](https://github.com/ownport/m3ua-unbundle) repository is deprecated and not supported any more. For latest version of m3ua-unbundle.py script please use [ownport/wireshark-tools](https://github.com/ownport/wireshark-pytools) repository
+
+
+
 Python script allows to unbundle M3UA messages from IP packet.
 
 According to RFC 2960 more than one messages may be carried in the same SCTP packet. It's good to minimize overhead but the analysis of SIGTRAN trace can be not so easy.
